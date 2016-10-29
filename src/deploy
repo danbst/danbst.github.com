@@ -1,4 +1,8 @@
 set -e
+
+if [ "$1" == "--push" ]; then
+  push=true
+fi
 (
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
@@ -7,4 +11,10 @@ rm -rf public
 styx build
 rm -rf ../blog/*
 mv public/* ../blog/
+if [ -n "$push" ]; then
+  cd ..
+  git add .
+  git commit -m "update"
+  git push
+fi
 )

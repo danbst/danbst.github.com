@@ -55,7 +55,7 @@ let
 
      Set the themes used here
   */
-  themes = [ "hyde" ];
+  themes = [ "hyde-override" "hyde" ];
 
 
 /*-----------------------------------------------------------------------------
