@@ -1,0 +1,1 @@
+nix-shell -p $(nix-build https://github.com/styx-static/styx/archive/master.tar.gz)
